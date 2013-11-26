@@ -10,33 +10,27 @@ $map      = ['pop' => 0, 'rock' => 1];
 $m2dCount = count($music2dance)-1;
 $music    = null;
 
-if($argc)
-{
-    $music = isset($argv[1]) ? $argv[1] : null;
-    $value = explode('=', $music)[1];
-    if(isset($map[$value]))
-        $music = $music2dance[$map[$value]];
-    else
-        $music = null;
-}
+if($argc && isset($argv[1]) && isset($map[$argv[1]]))// php dancedown.php rock
+    $music = $music2dance[$map[$argv[1]];
 
 $names = ['paul', 'molly', '1'];
 $namesCount = count($names)-1;
 
 $people2music = [];
 $peopleAmount = mt_rand(0, 20);
-
-echo 'Let\'s meet our gests: ' . "\n";
+$echo = 'Let\'s meet our gests: ' . "\n";
 
 for($i = 0; $i < $peopleAmount; $i++)
 {
     $offset   = mt_rand(0, $namesCount);
-    $newGuest = (isset($names[$offset]) ? $names[$offset] : $names[0]) . $i;
+    $newGuest = ( isset($names[$offset]) ? $names[$offset] : $names[0] ) . $i;
     $musicCur = $music2dance[mt_rand(0, $m2dCount)];
-
-    echo $newGuest . " like " . $musicCur['music'] . "\n";
     $people2music[$newGuest] = $musicCur;
+    
+    $echo .= $newGuest . " like " . $musicCur['music'] . "\n";
 }
+
+echo $echo;
 
 function run($music, $people2music, $music2dance, $m2dCount)
 {
