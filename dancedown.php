@@ -1,11 +1,8 @@
 <?php
-// Dance down, show is over
-// Процедурное, легко-рсширяемое решение без абстракций для задачки с ночным клубом.
-
+// Dance down, show is over; Процедурное, легко-рсширяемое решение без абстракций для задачки с ночным клубом.
 $music2dance = [
-    ['music' => 'pop',  'actions' => ['hands up', 'head down']],
-    ['music' => 'rock', 'actions' => ['hand up', 'hand down']]
-];
+    ['music' => 'pop',  'actions' => 'hands up & head down'],
+    ['music' => 'rock', 'actions' => 'hand up & hand down']];
 $map      = ['pop' => 0, 'rock' => 1];
 $m2dCount = count($music2dance)-1;
 $music    = null;
@@ -13,9 +10,8 @@ $music    = null;
 if($argc && isset($argv[1]) && isset($map[$argv[1]]))// php dancedown.php rock
     $music = $music2dance[$map[$argv[1]];
 
-$names = ['paul', 'molly', '1'];
-$namesCount = count($names)-1;
-
+$names        = ['paul', 'molly', '1'];
+$namesCount   = count($names)-1;
 $people2music = [];
 $peopleAmount = mt_rand(0, 20);
 $echo = 'Let\'s meet our gests: ' . "\n";
@@ -31,24 +27,17 @@ for($i = 0; $i < $peopleAmount; $i++)
 }
 
 echo $echo;
-
-function run($music, $people2music, $music2dance, $m2dCount)
-{
-    $nowPlaying = ($music != null) ? $music : $music2dance[mt_rand(0, $m2dCount)];
-
-    echo "\n   === " . 'Now playing ' . $nowPlaying['music'] . " ===\n";
-
-    foreach($people2music as $name => $musicData)
-    {
-        echo ($musicData['music'] == $nowPlaying['music'])
-            ? $name . ' is dancing: ' . implode(' & ', $musicData['actions']) . "\n"
-            : $name . ' goes drinking' . "\n";
-    }
-}
+$nowPlaying = ($music != null) ? $music : $music2dance[mt_rand(0, $m2dCount)];
 
 while(true)
 {
-    run($music, $people2music, $music2dance, $m2dCount);
+    echo "\n   === " . 'Now playing ' . $nowPlaying['music'] . " ===\n";
+
+    foreach($people2music as $name => $musicData)
+        echo ($musicData['music'] == $nowPlaying['music'])
+            ? $name . ' is dancing: ' . $musicData['actions'] . "\n"
+            : $name . ' goes drinking' . "\n";
+
     sleep(5);
     $music = $music2dance[mt_rand(0, $m2dCount)];
 }
