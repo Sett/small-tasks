@@ -8,6 +8,6 @@ trait Config_Names
     public function namesApplyConfig($data)
     {
         $this->names = $data;
-        $this->namesCount = count($this->names);
+        $this->namesCount = count($this->names)-1;
     }
 }
