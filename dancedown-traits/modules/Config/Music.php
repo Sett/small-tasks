@@ -8,6 +8,6 @@ trait Config_Music
     public function musicApplyConfig($data)
     {
         $this->music = $data;
-        $this->musicCount = count($this->music);
+        $this->musicCount = count($this->music)-1;
     }
 }
