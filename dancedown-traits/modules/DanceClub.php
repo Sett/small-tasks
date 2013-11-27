@@ -6,12 +6,12 @@ trait DanceClub
      * @param array $people
      * @param string $onLoadConfig path/to/file
      */
-    public function __construct($people = [], $onLoadConfig = '')
+    public function __construct($onLoadConfig = '', $amount = 20)
     {
         $config = $onLoadConfig ? $onLoadConfig : __DIR__ . '/../application/configs/onload.json';
 
         $this->applyConfig($config);
-        $this->run($people);
+        $this->run($this->getPeople(20));
     }
     
     /**
