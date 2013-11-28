@@ -2,7 +2,7 @@
 
 trait Music
 {
-    public function play()
+    public function play($music = '')
     {
         
     }
