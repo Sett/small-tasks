@@ -8,6 +8,6 @@ define('DC_ROOT', __DIR__ . '/');
 require_once 'Dance_Club.php';
 $start = time();
 
-$dc = new Dance_Club($people, __DIR__ . '/application/configs/onload.php');
+$dc = new Dance_Club(__DIR__ . '/application/configs/onload.php', 10, 'rock');
 
 $dc->output($dc->say('Finish in ' . (time()-$start) . ' second(s)', 'h1', true));
