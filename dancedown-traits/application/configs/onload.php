@@ -18,5 +18,5 @@ return
     ],
     
     "names" => ["Paul", "Marry"],
-    "music" => ["rock", "pop"]
+    "music" => ["rock" => "moves hand up", "pop" => "moves leg up & down"]
 ];
