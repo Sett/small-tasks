@@ -19,7 +19,7 @@ return
     
     "names" => ["Paul", "Marry"],
     "music" => [
-        ["name" => "rock", "dance" => "moves hand up"], 
-        ["name" => "pop", "dance" => "moves leg up & down"]
+        "rock" => ["name" => "Rock&Roll", "dance" => "moves hand up"], 
+        "pop" => ["name" => "Populated music", "dance" => "moves leg up & down"]
     ]
 ];
