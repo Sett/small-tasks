@@ -25,6 +25,6 @@ return
             ["name" => "pop", "dance" => "moves leg up & down"]
         ],
         
-        "map" => [0 => "rock", 1 => "pop"]
+        "map" => ["rock" => 0, "pop" => 1]
     ]
 ];
