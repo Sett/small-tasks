@@ -19,7 +19,12 @@ return
     
     "names" => ["Paul", "Marry"],
     "music" => [
-        "rock" => ["name" => "Rock&Roll", "dance" => "moves hand up"], 
-        "pop" => ["name" => "Populated music", "dance" => "moves leg up & down"]
+        "data" =>
+        [
+            ["name" => "rock", "dance" => "moves hand up"], 
+            ["name" => "pop", "dance" => "moves leg up & down"]
+        ],
+        
+        "map" => [0 => "rock", 1 => "pop"]
     ]
 ];
