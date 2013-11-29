@@ -10,7 +10,7 @@ trait DanceClub
     {
         $config = $onLoadConfig ? $onLoadConfig : __DIR__ . '/../application/configs/onload.json';
 
-        $this->music = $music ? $music : $this->music;
+        $this->playing = $music ? $music : $this->playing;
         $this->applyConfig($config);
         $this->run($this->getPeople(20));
     }
