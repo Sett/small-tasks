@@ -2,6 +2,9 @@
 
 trait Music
 {
+    /**
+     * @param string @playing
+     */
     public $playing = 'rock';
     
     public function play($people = [])
