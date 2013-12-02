@@ -14,7 +14,6 @@ $count = mt_rand(0, 30);
 for($i = 0; $i < $count; $i++)
     $array[] = mt_rand(0, 20);
     
-    
 // === Само решение === //    
 
 preg_match_all('/\d\d/i',implode(';', $array), $greater10);
