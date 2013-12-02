@@ -7,6 +7,9 @@ trait Music
      */
     public $playing = 'rock';
     
+    /**
+     * @param array $people
+     */
     public function play($people = [])
     {
         $this->say('Playing ' . $this->playing, 'h1');
