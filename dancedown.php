@@ -39,5 +39,5 @@ while(true)
             : $name . ' goes drinking' . "\n";
 
     sleep(5);
-    $music = $music2dance[mt_rand(0, $m2dCount)];
+    $nowPlaying = $music2dance[mt_rand(0, $m2dCount)];
 }
